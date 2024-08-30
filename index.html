@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test WebView Cambio</title>
   <script>
-    // Enviar un mensaje a la aplicación React Native
-    window.postMessage('Hello from WebView', '*');
-
-    // Recibir mensajes desde la aplicación React Native
-    window.addEventListener('message', (event) => {
-      console.log('Received message from React Native:', event.data);
-      // Envía el token de vuelta si es necesario
-    });
+    window.onload = function() {
+      // Enviar mensaje a React Native
+      window.postMessage('Hello from WebView', '*');
+    };
   </script>
   <style>
     body {
