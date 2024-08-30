@@ -8,17 +8,23 @@
     window.onload = function() {
       // Enviar mensaje a React Native
       window.postMessage('Hello from WebView', '*');
+
+      // Escuchar mensajes desde React Native
+      window.addEventListener('message', function(event) {
+        const message = event.data;
+        alert('Mensaje recibido desde React Native: ' + message);
+      });
     };
   </script>
   <style>
     body {
       background-color: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
-      margin: 0; /* Opcional: elimina el margen predeterminado */
-      padding: 20px; /* Opcional: elimina el relleno predeterminado */
+      margin: 0; /* Elimina el margen predeterminado */
+      padding: 20px; /* Elimina el relleno predeterminado */
     }
   </style>
 </head>
 <body>
-  <h1>Hola, WebView Test!</h1>
+  <h1>Hola, WebView Test 1!</h1>
 </body>
 </html>
